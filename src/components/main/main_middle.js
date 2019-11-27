@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         width: 200,
         height: 40,
         borderRadius: 50,
-        borderColor: "#FF3980",
+        borderColor: "#FF5B5B",
         borderWidth: 2,
         alignItems: "center",
         justifyContent: "center",
@@ -43,13 +43,14 @@ const styles = StyleSheet.create({
     },
     signInText:{
         fontSize: 15,
-        color:"#FF3980"
+        color:"#FF5B5B",
+        opacity: 0.85
     },
     signUp: {
         width: 200,
         height: 40,
         borderRadius: 50,
-        borderColor: "#FF5B5B",
+        borderColor: "#FF3980",
         borderWidth: 2,
         alignItems: "center",
         justifyContent: "center",
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
     },
     signUpText: {
         fontSize: 15,
-        color: "#FF5B5B"
-    }
+        color: "#FF3980",
+        opacity: 0.85
+    },
 });
