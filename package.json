@@ -1,5 +1,5 @@
 {
-  "name": "Prototype01",
+  "name": "prototype01",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "react": "16.9.0",
-    "react-native": "0.61.5"
+    "react-native": "0.61.5",
+    "react-native-gesture-handler": "^1.5.1",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3",
+    "react-navigation-tabs": "^2.6.0"
   },
   "devDependencies": {
     "@babel/core": "7.7.4",
@@ -25,5 +29,17 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "description": "L.O.P_prototype01",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bigone0617/Prototype01.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bigone0617/Prototype01/issues"
+  },
+  "homepage": "https://github.com/Bigone0617/Prototype01#readme"
 }

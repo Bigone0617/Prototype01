@@ -5,7 +5,7 @@ export default class main_logo extends React.Component{
     render(){
         return(
             <View style={styles.container}>
-                <Image style={styles.img} source={require('../icon/icon_main.png')}/>
+                <Image style={styles.img} source={require('../../icon/icon_main.png')}/>
                 <Text style={styles.text_Main}>견생연분</Text>
             </View>
         );

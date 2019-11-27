@@ -9,6 +9,9 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+import {createStackNavigator} from 'react-navigation-stack';
+import {createAppContainer} from 'react-navigation';
+//import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import {
   Header,
@@ -18,18 +21,15 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Main from './src/components/main/main'
+import Main from './src/components/main/mainScreen'
+import Signin from './src/components/main/singin/signin'
 
 export default class App extends React.Component{
-  state = {
-    isSignIn: false, 
-    isSignUp: false
-  };
   render(){
-    const {isSignIn, isSignUp} = this.state;
     return(
       <View style={styles.container}>
         <Main/>
+        {/* <Signin/> */}
       </View>
     );
   }
