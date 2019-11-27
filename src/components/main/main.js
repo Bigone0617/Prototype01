@@ -6,7 +6,7 @@ export default class main extends React.Component{
     render(){
         return(
             <View style={styles.container}>
-                <StatusBar hidden={true}/>
+                <StatusBar barStyle={"dark-content"} backgroundColor={"white"}/>
                 <Main_form/>
             </View>
         );

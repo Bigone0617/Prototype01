@@ -30,15 +30,15 @@ const styles = StyleSheet.create({
         flex:1
     },
     signIn:{
-        width: 150,
-        height: 50,
+        width: 200,
+        height: 40,
         borderRadius: 50,
         borderColor: "#FF3980",
         borderWidth: 2,
         alignItems: "center",
         justifyContent: "center",
-        marginBottom: 20,
-        marginTop: 150,
+        marginBottom: 10,
+        marginTop: 50,
         opacity: 0.85
     },
     signInText:{
@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
         color:"#FF3980"
     },
     signUp: {
-        width: 150,
-        height: 50,
+        width: 200,
+        height: 40,
         borderRadius: 50,
         borderColor: "#FF5B5B",
         borderWidth: 2,

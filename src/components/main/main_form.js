@@ -14,9 +14,9 @@ export default class main_form extends React.Component{
                 <View style={styles.middle}>
                     <Middle/>
                 </View>
-                <View style={styles.bottom}>
+                {/* <View style={styles.bottom}>
                     <Bottom/>
-                </View>
+                </View> */}
             </View>
         );
     }
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         flexDirection:"column"
     },
     top:{
-        flex: 2,
+        flex: 5,
         backgroundColor:"white",
         alignItems: "center",
         justifyContent: "center"
@@ -40,9 +40,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center"
       },
-      bottom:{
-        flex:1,
-        backgroundColor:"#FF5B5B",
-        opacity: 0.85
-      }
+    //   bottom:{
+    //     flex:1,
+    //     backgroundColor:"#FF5B5B",
+    //     opacity: 0.85
+    //   }
 });
