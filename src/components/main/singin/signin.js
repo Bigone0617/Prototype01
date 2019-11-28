@@ -8,16 +8,15 @@ export default class signin extends React.Component{
         return(
             <View style={styles.container}>
                 <View style={styles.inputContainer}>
-                    <Text style={{marginBottom:1}}> ID</Text>
+                    <Text style={{marginBottom:1}}> 아이디</Text>
                     <TextInput 
                         style={styles.textInput}
-                        placeholder={'ID'}
+                        placeholder={'아이디'}
                         />
-                    <Text> Password</Text>
+                    <Text> 비밀번호</Text>
                     <TextInput 
                         style={styles.textInput}
-                        placeholder={'Password'}
-                        fontSize={15}
+                        placeholder={'비밀번호'}
                         />
                 </View>
                 <View style={styles.loginContainer}>
