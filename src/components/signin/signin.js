@@ -7,13 +7,16 @@ export default class signin extends React.Component{
     render(){
         return(
             <View style={styles.container}>
+                <View style={styles.titleCotainer}>
+                    <Text style={styles.title}>로그인</Text>
+                </View>
                 <View style={styles.inputContainer}>
-                    <Text style={{marginBottom:1}}> 아이디</Text>
+                    <Text style={{marginBottom:1, fontWeight:"bold"}}> 아이디</Text>
                     <TextInput 
                         style={styles.textInput}
                         placeholder={'아이디'}
                         />
-                    <Text> 비밀번호</Text>
+                    <Text style={{fontWeight:"bold"}}> 비밀번호</Text>
                     <TextInput 
                         style={styles.textInput}
                         placeholder={'비밀번호'}
@@ -29,16 +32,16 @@ export default class signin extends React.Component{
                     </View>
                     <View style={styles.anotherLoginButtonContainer}>
                         <TouchableOpacity onPress={() => this._clickFacebook()}>
-                            <Image style={styles.anotherLoginButton} source={require('../../../icon/icon_facebook_color.png')}/>
+                            <Image style={styles.anotherLoginButton} source={require('../../icon/icon_facebook_color.png')}/>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => this._clickGoogle()}>
-                            <Image style={styles.anotherLoginButton} source={require('../../../icon/icon_google_color.png')}/>
+                            <Image style={styles.anotherLoginButton} source={require('../../icon/icon_google_color.png')}/>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => this._clickInstagram()}>
-                            <Image style={styles.anotherLoginButton} source={require('../../../icon/icon_instagram_color.png')}/>
+                            <Image style={styles.anotherLoginButton} source={require('../../icon/icon_instagram_color.png')}/>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => this._clickKakaotalk()}>
-                            <Image style={styles.anotherLoginButton} source={require('../../../icon/icon_kakaotalk_color.png')}/>
+                            <Image style={styles.anotherLoginButton} source={require('../../icon/icon_kakaotalk_color.png')}/>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.find}>
@@ -54,7 +57,7 @@ export default class signin extends React.Component{
         );
     };
     _clickLogin=()=>{
-        console.log(this.props);
+        this.props.navigation.navigate('Main');
     }
     _clickFacebook=()=>{
         console.log("facebook");
@@ -80,14 +83,26 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems: "center"
     },
+    titleCotainer: {
+        flex: 3,
+        width: width,
+        justifyContent: "center"
+    },
+    title: {
+        color: "#FF5B5B",
+        fontSize: 30,
+        fontWeight: "bold",
+        marginLeft: 40
+    },
     inputContainer:{
-        flexDirection: "column"
+        flexDirection: "column",
+        flex : 3,
+        width: width * 0.8
     },
     input:{
         flexDirection:"column"
     }, 
     textInput: {
-        width: width * 0.85,
         height: 40,
         borderBottomWidth: 1,
         borderBottomColor: "#8F8F8F",
@@ -95,7 +110,8 @@ const styles = StyleSheet.create({
         
     },
     loginContainer: {
-        marginTop: 40
+        marginTop: 40,
+        flex: 5
     },
     login: {
         width: width * 0.8,

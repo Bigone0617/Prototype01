@@ -106,7 +106,7 @@ export default class signupSub extends React.Component {
                     </View>
                 </View>
                 <View style={styles.signUpContainer}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{this._clickSignUp()}}>
                         <View style={styles.signUpButton}>
                             <Text style={styles.signUpText}>회원가입</Text>
                         </View>
@@ -114,6 +114,9 @@ export default class signupSub extends React.Component {
                 </View>
             </View>
         )
+    }
+    _clickSignUp=()=> {
+        this.props.navigation.navigate('Main');
     }
 }
 const styles = StyleSheet.create({

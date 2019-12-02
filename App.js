@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import Main from './src/components/main/mainScreen';
+import Start from './src/components/start/startScreen';
 
 const App = () => {
     return (
-        <Main/>
+        <Start/>
     );
 };
 

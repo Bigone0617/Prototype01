@@ -2,7 +2,7 @@
 import React,{Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 
-export default class main_form extends React.Component{
+export default class start_form extends React.Component{
     render(){
         return(
             <View style={styles.container}>
