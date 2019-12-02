@@ -46,7 +46,7 @@ export default class signin extends React.Component{
                             <Text style={styles.findText} onPress={()=>this._clickFacebook()}>아이디·비밀번호를 잃어버리셨나요? | </Text>
                         </View>
                         <View>
-                            <Text style={styles.findText} onPress={()=>this._clickFacebook()}>회원가입</Text>
+                                <Text style={styles.findText} onPress={()=>this._clickSignUp()}>회원가입</Text>
                         </View>
                     </View>
                 </View>
@@ -54,7 +54,7 @@ export default class signin extends React.Component{
         );
     };
     _clickLogin=()=>{
-        console.log("로그인!!!");
+        console.log(this.props);
     }
     _clickFacebook=()=>{
         console.log("facebook");
@@ -68,6 +68,9 @@ export default class signin extends React.Component{
     _clickKakaotalk=()=>{
         console.log("kakaotalk");
     };
+    _clickSignUp=()=>{
+        this.props.navigation.navigate('SignUp');
+    }
 }
 
 const styles = StyleSheet.create({
