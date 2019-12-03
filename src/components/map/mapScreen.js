@@ -1,11 +1,20 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
+import MapView, {Marker} from 'react-native-maps';
 
 export default class MapScreen extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Text>MapScreen!!!</Text>
+                 <MapView
+                    style={styles.map}
+                    initialRegion={{
+                    latitude: 37.78825,
+                    longitude: -122.4324,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
+                    }}
+                />
             </View>
         )
     }
@@ -13,8 +22,19 @@ export default class MapScreen extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
-        alignItems: "center",
-        justifyContent: "center"
+        position:'absolute',
+        top:0,
+        left:0,
+        right:0,
+        bottom:0,
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+    },
+    map: {
+        position:'absolute',
+        top:0,
+        left:0,
+        right:0,
+        bottom:0
     }
 });
