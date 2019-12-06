@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
-export default class SearchScreen extends Component{
+export default class SearchScreen extends React.Component{
     render(){
         return(
             <View style={styles.container}>
-                <Text>SearchScreen!!!</Text>
+               <Text>searchView</Text>
             </View>
         )
     }
