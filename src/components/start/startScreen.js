@@ -5,7 +5,7 @@ import StartForm from './start_form';
 import SignIn from '../signin/signin';
 import SignUp from '../signup/signup';
 import SignUp_Sub from '../signup/signup_sub';
-import Main from '../main/mainScreen';
+import Main from '../main/MainScreen';
 
 
 const AppStack = createStackNavigator(

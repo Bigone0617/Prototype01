@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions,TouchableWithoutFeedback } from 'react-native';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
@@ -11,6 +11,7 @@ import MapScreen from '../map/mapScreen';
 import BoardScreen from '../board/boardScreen';
 import SearchScreen from '../search/searchScreen';
 import ProfileScreen from '../profile/profileScreen';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const {width, height} = Dimensions.get('window');
 
@@ -21,8 +22,12 @@ const MapStack = createStackNavigator(
     {
         defaultNavigationOptions:({navigation}) => ({
             headerLeft: <Image style={{width:35,height:35,marginLeft:10}} source={require('../../icon/icon_main.png')}/>,
-            //title:'견생연분',
-            headerRight: <Icon name='ios-chatboxes' size={35} style={{marginRight:10, color:"#FF5B5B"}}/>
+            headerRight: 
+                <TouchableWithoutFeedback onPress={()=>navigation.navigate('Chat')}>
+                    <View>
+                        <Icon name='ios-chatboxes' size={35} style={{marginRight:10, color:"#FF5B5B"}}/>
+                    </View>
+                </TouchableWithoutFeedback>
         }),
     }
 );
@@ -32,7 +37,10 @@ const ChatStack = createStackNavigator(
     },
     {
         defaultNavigationOptions:({navigation}) => ({
-            //title:'견생연분'
+            headerLeft: 
+                <TouchableWithoutFeedback onPress={()=> navigation.navigate('Map')}>
+                    <Image style={{width:35,height:35,marginLeft:10}} source={require('../../icon/icon_main.png')}/>
+                </TouchableWithoutFeedback>,
         }),
     }
 );
@@ -42,7 +50,16 @@ const BoardStack = createStackNavigator(
     },
     {
         defaultNavigationOptions:({navigation}) => ({
-            title:'견생연분'
+            headerLeft: 
+                <TouchableWithoutFeedback onPress={()=> navigation.navigate('Map')}>
+                    <Image style={{width:35,height:35,marginLeft:10}} source={require('../../icon/icon_main.png')}/>
+                </TouchableWithoutFeedback>,
+            headerRight: 
+                <TouchableWithoutFeedback onPress={()=>navigation.navigate('Chat')}>
+                        <View>
+                            <Icon name='ios-chatboxes' size={35} style={{marginRight:10, color:"#FF5B5B"}}/>
+                        </View>
+                </TouchableWithoutFeedback>
         }),
     }
 );
@@ -52,7 +69,16 @@ const SearchStack = createStackNavigator(
     },
     {
         defaultNavigationOptions:({navigation}) => ({
-            title:'견생연분'
+            headerLeft: 
+                <TouchableWithoutFeedback onPress={()=> navigation.navigate('Map')}>
+                    <Image style={{width:35,height:35,marginLeft:10}} source={require('../../icon/icon_main.png')}/>
+                </TouchableWithoutFeedback>,
+            headerRight: 
+                 <TouchableWithoutFeedback onPress={()=>navigation.navigate('Chat')}>
+                        <View>
+                            <Icon name='ios-chatboxes' size={35} style={{marginRight:10, color:"#FF5B5B"}}/>
+                        </View>
+                </TouchableWithoutFeedback>
         }),
     }
 );
@@ -62,7 +88,16 @@ const ProfileStack = createStackNavigator(
     },
     {
         defaultNavigationOptions:({navigation}) => ({
-            title:'견생연분'
+            headerLeft: 
+                <TouchableWithoutFeedback onPress={()=> navigation.navigate('Map')}>
+                    <Image style={{width:35,height:35,marginLeft:10}} source={require('../../icon/icon_main.png')}/>
+                </TouchableWithoutFeedback>,
+            headerRight: 
+                <TouchableWithoutFeedback onPress={()=>navigation.navigate('Chat')}>
+                    <View>
+                        <Icon name='ios-chatboxes' size={35} style={{marginRight:10, color:"#FF5B5B"}}/>
+                    </View>
+                </TouchableWithoutFeedback>
         }),
     }
 );
@@ -117,5 +152,16 @@ const MainStack = createStackNavigator(
         }
     }
 )
+
+const styles = StyleSheet.create({
+    title:{
+        flex:1,
+        flexDirection: "row" 
+    }
+});
+
+const _chatScreen=()=>{
+    navigation.state = "Chat"
+}
 
 export default createAppContainer(MainStack);

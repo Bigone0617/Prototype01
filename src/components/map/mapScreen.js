@@ -53,24 +53,61 @@ export default class MapScreen extends React.Component{
                 </MapView> */}
                 <MapView style={styles.map}
                     showsUserLocation
-                    initialRegion={{
-                        latitude:37.33307,
-                        longitude: -122.0324,
-                        latitudeDelta: 0.02,
-                        longitudeDelta: 0.02
+                    region={{
+                        latitude: this.state.initialPosition.latitude,
+                        longitude: this.state.initialPosition.longitude,
+                        latitudeDelta: this.state.initialPosition.latitudeDelta,
+                        longitudeDelta: this.state.initialPosition.longitudeDelta
                     }}
-                />
-                <View style={styles.text}>
+                >
+                    <Marker
+                      style={styles.marker}
+                      coordinate={{
+                        latitude: this.state.initialPosition.latitude,   
+                        longitude: this.state.initialPosition.longitude
+                      }} 
+                      onPress={()=>console.log("marker!")} 
+                    >
+                        <TouchableOpacity onPress={()=>this._click()}>
+                            <Image 
+                                style={{width:50, height:50}}
+                                source={require('../../icon/icon_main.png')}
+                            />
+                        </TouchableOpacity>
+                    </Marker>
+                </MapView>
+                <View style={styles.miniView}>
+
+                </View>
+
+                {/* <View style={styles.text}>
                     <TouchableOpacity onPress={()=>this._reset()}>
                         <Text>CLICK!</Text>
                     </TouchableOpacity>
-                </View>
+                </View> */}
             </View>
         )
     }
 
     _reset=()=> {
-        console.log(this.state.initialPosition.latitude);
+            Geolocation.getCurrentPosition((position)=> {
+            const lat = parseFloat(position.coords.latitude)
+            const long = parseFloat(position.coords.longitude)
+            const initialRegion = {
+                latitude: lat,
+                longitude: long,
+                latitudeDelta: LATITUDE_DELTA,
+                longitudeDelta: LONGITUDE_DELTA
+            }
+            this.setState({initialPosition: initialRegion})
+            this.setState({markerPosition: initialRegion})
+        },
+        (error) => alert(JSON.stringify(error)),
+        {enableHighAccuracy: true, timeout:20000, maximumAge: 1000});
+        console.log(this.state.initialPosition.latitude+"@@@@@"+this.state.initialPosition.longitude);
+    }
+    _click=()=>{
+        console.log(this.state.initialPosition.latitude+"@@@"+this.state.initialPosition.longitude);
     }
 }
 
@@ -80,9 +117,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-end',
     },
-    map: {
-        ...StyleSheet.absoluteFillObject
-    },
+    // map: {
+    //     ...StyleSheet.absoluteFillObject
+    // },
+    map:{
+        flex:1,
+        top:0,
+        right:0,
+        left:0,
+        bottom:0,
+        position:'absolute'
+    },  
     marker: {
         marginLeft: 46,
         marginTop: 33,
@@ -90,5 +135,8 @@ const styles = StyleSheet.create({
       },
       text: {
           flex: 1
+      },
+      miniView:{
+          
       }
 });
